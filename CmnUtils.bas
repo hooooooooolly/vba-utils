@@ -1,27 +1,27 @@
 Attribute VB_Name = "CmnUtils"
 Option Explicit
 
-'/** Šg‘å—¦100%‚Å‘SƒV[ƒg‚Ì‰Šú‰»‚ğs‚¤. */
+'/** æ‹¡å¤§ç‡100%ã§å…¨ã‚·ãƒ¼ãƒˆã®åˆæœŸåŒ–ã‚’è¡Œã†. */
 Public Sub initAllSheets()
     Call initAllSheetsWithSpecifiedZoomRate(100)
 End Sub
 
 '/**
-' * ”CˆÓ‚ÌŠg‘å—¦‚Å‘SƒV[ƒg‚Ì‰Šú‰»‚ğs‚¤.<br>
-' * ƒfƒtƒHƒ‹ƒg’l: 130%
+' * ä»»æ„ã®æ‹¡å¤§ç‡ã§å…¨ã‚·ãƒ¼ãƒˆã®åˆæœŸåŒ–ã‚’è¡Œã†.<br>
+' * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤: 130%
 ' */
 Public Sub initAllSheetsWithSpecified()
-    Dim zoomRate As String: zoomRate = InputBox("Šg‘å—¦‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢B", "Šg‘å—¦‚Ìİ’è", 130)
+    Dim zoomRate As String: zoomRate = InputBox("æ‹¡å¤§ç‡ã‚’è¨­å®šã—ã¦ãã ã•ã„ã€‚", "æ‹¡å¤§ç‡ã®è¨­å®š", 130)
     If IsNumeric(zoomRate) Then
         Call initAllSheetsWithSpecifiedZoomRate(zoomRate)
     End If
 End Sub
 
 '/**
-' * ‘SƒV[ƒg‚É‘Î‚µ‚ÄA1‚ğ‘I‘ğ.<br>
-' * ”CˆÓ‚ÌŠg‘å—¦‚Éİ’è‚·‚é.
+' * å…¨ã‚·ãƒ¼ãƒˆã«å¯¾ã—ã¦A1ã‚’é¸æŠ.<br>
+' * ä»»æ„ã®æ‹¡å¤§ç‡ã«è¨­å®šã™ã‚‹.
 ' *
-' * @param zoomRate Šg‘å—¦
+' * @param zoomRate æ‹¡å¤§ç‡
 ' */
 Private Sub initAllSheetsWithSpecifiedZoomRate(ByVal zoomRate As Long)
     Dim shtNum As Long
@@ -38,4 +38,12 @@ Private Sub initAllSheetsWithSpecifiedZoomRate(ByVal zoomRate As Long)
             End If
         End With
     Next shtNum
+End Sub
+
+'/** éè¡¨ç¤ºã«ãªã£ã¦ã„ã‚‹åå‰å®šç¾©ã‚’è¡¨ç¤ºã™ã‚‹. */
+Public Sub dispNameDefinition()
+    Dim n As Object
+    For Each n In Names
+        n.Visible = True
+    Next
 End Sub
