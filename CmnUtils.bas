@@ -47,3 +47,15 @@ Public Sub dispNameDefinition()
         n.Visible = True
     Next
 End Sub
+
+'/**
+' * 全シートに対して改ページ罫線を削除.
+' */
+Public Sub initDispPageBreaks()
+    Dim shtNum As Long
+    For shtNum = Sheets.Count To 1 Step -1
+        With Sheets(shtNum)
+            ActiveSheet.DisplayPageBreaks = False
+        End With
+    Next shtNum
+End Sub
