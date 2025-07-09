@@ -1,4 +1,4 @@
-Attribute VB_Name = "CmnUtils"
+Attribute VB_Name = "SheetUtils"
 Option Explicit
 
 '/**
@@ -21,6 +21,8 @@ Public Sub initAllSheets(ByRef sp As SheetProperties)
                     'スクロール位置
                     .scrollColumn = sp.scrollColumn
                     .scrollRow = sp.scrollRow
+                    '枠線
+                    .DisplayGridlines = sp.displayGridlines
                     '指定した時のみ拡大率を変更する
                     If Not (sp.zoomRate = 0) Then
                         .Zoom = sp.zoomRate
