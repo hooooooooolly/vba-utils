@@ -17,6 +17,8 @@ Private scrollColumn_      As Long
 Private scrollRow_         As Long
 '改ページ罫線の表示可否(デフォルト値: False)
 Private displayPageBreaks_ As Boolean
+'罫線の表示可否(デフォルト値: False)
+Private displayGridlines_  As Boolean
 
 '/** コンストラクタ */
 Private Sub Class_Initialize()
@@ -24,6 +26,7 @@ Private Sub Class_Initialize()
     scrollColumn_ = 1
     scrollRow_ = 1
     displayPageBreaks_ = False
+    displayGridlines_ = False
 End Sub
 
 '/** Property */
@@ -43,6 +46,10 @@ Property Let displayPageBreaks(displayPageBreaks As Boolean)
     displayPageBreaks_ = displayPageBreaks
 End Property
 
+Property Let displayGridlines(displayGridlines As Boolean)
+    displayGridlines_ = displayGridlines
+End Property
+
 Property Get zoomRate() As Long
     zoomRate = zoomRate_
 End Property
@@ -57,4 +64,8 @@ End Property
 
 Property Get displayPageBreaks() As Boolean
     displayPageBreaks = displayPageBreaks_
+End Property
+
+Property Get displayGridlines() As Boolean
+    displayGridlines = displayGridlines_
 End Property
