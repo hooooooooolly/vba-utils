@@ -42,3 +42,4 @@ SheetProperties: シート用設定値を持つインスタンス
 |scrollColumn|列のスクロール位置|1|
 |scrollRow|行のスクロール位置|1|
 |displayPageBreaks|改ページ罫線の表示可否|False|
+|displayGridlines|罫線の表示可否|False|
