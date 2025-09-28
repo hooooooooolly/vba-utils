@@ -30,6 +30,31 @@ SheetProperties: シート用設定値を持つインスタンス
 
 　  
 
+
+
+## クラス名: FileHandler
+
+ファイル操作用モジュールです。  
+FSOをラップしてOOPっぽい使い方ができるようになっています。
+
+|プロシージャ種別|プロシージャ名|引数|返り値|説明|
+|----|----|----|----|----|
+|Sub|init|String: ファイルパス|-|コンストラクタ代わりに利用します。|
+|Sub|openFile|WriteMode: 書き込みモード|-|ファイルを開きます。|
+|Sub|closeFile|-|-|ファイルを閉じます。|
+|Function|getFileName|-|String: ファイル名|ファイル名のgetterです。|
+|Function|exists|-|Boolean: 存在する場合true|ファイルの存在チェックを行います。|
+|Sub|delete|-|-|ファイルを削除します。|
+|Function|readAll|-|String: ファイルの中身|ファイル全体を読み込みます。<br>ファイルサイズに注意。|
+|Function|readLine|-|String: ファイルの中身|ファイルを1行ずつ読み込みます。<br>ループ内での利用を想定。|
+|Sub|writeRaw|String: 書き込む内容|-|末尾の改行なしで書き込みます。|
+|Sub|writeLine|String: 書き込む内容|-|末尾の改行ありで書き込みます。|
+|Sub|appendLine|String: 書き込み内容|-|追記モードで書き込みます。|
+
+　  
+
+
+
 ## クラス名: SheetProperties
 
 シート用設定値を保持するクラスモジュールです。  
